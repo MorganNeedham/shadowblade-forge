@@ -1,5 +1,6 @@
 import HomeHero from "@/components/home/HomeHero";
 import ForgeCard from "@/components/home/ForgeCard";
+import MissionSection from "@/components/home/MissionSection";
 
 export default function Home() {
   return (
@@ -49,6 +50,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <MissionSection />
     </main>
   );
 }
