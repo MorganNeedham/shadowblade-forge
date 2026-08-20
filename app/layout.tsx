@@ -1,3 +1,4 @@
+import SiteHeader from "@/components/layout/SiteHeader";
 import type { Metadata } from "next";
 import {
   Cormorant_Garamond,
@@ -45,7 +46,10 @@ export default function RootLayout({
       lang="en"
       className={`${eagleLake.variable} ${marcellusSC.variable} ${cormorantGaramond.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
