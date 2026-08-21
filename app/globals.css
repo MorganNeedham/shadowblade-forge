@@ -812,6 +812,104 @@ p {
 }
 
 /* =============================================
+   SITE FOOTER
+   ============================================= */
+
+.site-footer {
+  background-color: #0b0a0e;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer__grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1.4fr
+    1.4fr;
+
+  gap: 3rem;
+
+  padding-block: 4rem;
+}
+
+.site-footer__section h2 {
+  margin-bottom: 1rem;
+
+  color: var(--color-parchment);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.9rem;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-footer__section p {
+  margin-bottom: 1rem;
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.site-footer__tagline {
+  color: var(--color-gold);
+
+  font-style: italic;
+}
+
+.site-footer__links {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-footer__links li + li {
+  margin-top: 0.55rem;
+}
+
+.site-footer__links a,
+.site-footer__socials a {
+  color: var(--color-text-muted);
+
+  font-size: 0.9rem;
+
+  transition:
+    color var(--transition-standard);
+}
+
+.site-footer__links a:hover,
+.site-footer__links a:focus-visible,
+.site-footer__socials a:hover,
+.site-footer__socials a:focus-visible {
+  color: var(--color-copper-light);
+}
+
+.site-footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+.site-footer__bottom {
+  padding-block: 1.25rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer__bottom p {
+  margin: 0;
+
+  color: rgba(234, 224, 208, 0.5);
+
+  font-size: 0.8rem;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 
@@ -819,6 +917,10 @@ p {
   .site-header__inner {
     gap: 1.25rem;
   }
+
+  .site-footer__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
 
   .site-nav__list {
     gap: 1.25rem;
@@ -864,6 +966,12 @@ p {
 
   .home-hero__tagline {
     font-size: 1.05rem;
+  }
+
+  .site-footer__grid {
+  grid-template-columns: 1fr;
+
+  gap: 2rem;
   }
 }
 
