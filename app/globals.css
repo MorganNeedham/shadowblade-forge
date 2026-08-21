@@ -910,6 +910,263 @@ p {
 }
 
 /* =============================================
+   PAGE HERO
+   ============================================= */
+
+.page-hero {
+  position: relative;
+
+  padding-block: 7rem;
+
+  background:
+    radial-gradient(
+      circle at 25% 40%,
+      rgba(183, 122, 71, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(74, 42, 99, 0.22),
+      transparent 38%
+    ),
+    var(--color-obsidian-soft);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-hero__content {
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.page-hero__eyebrow {
+  margin-bottom: 0.75rem;
+
+  color: var(--color-copper);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.75rem;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.page-hero__title {
+  margin-bottom: 1.25rem;
+
+  color: var(--color-parchment);
+
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  line-height: 1.2;
+
+  text-wrap: balance;
+}
+
+.page-hero__description {
+  max-width: 680px;
+
+  margin-inline: auto;
+  margin-bottom: 0;
+
+  color: var(--color-gold);
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* =============================================
+   ABOUT — STORY
+   ============================================= */
+
+.about-story {
+  padding-block: 6rem;
+
+  background-color: var(--color-obsidian);
+}
+
+.about-story__grid {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 5rem;
+
+  align-items: center;
+}
+
+.about-story__content {
+  max-width: 650px;
+}
+
+.about-story__eyebrow,
+.about-values__eyebrow,
+.about-mark__eyebrow {
+  margin-bottom: 0.6rem;
+
+  color: var(--color-copper);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.75rem;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.about-story__content h2,
+.about-values__heading h2,
+.about-mark__content h2 {
+  color: var(--color-parchment);
+
+  font-family: var(--font-display), Georgia, serif;
+
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+
+  line-height: 1.3;
+}
+
+.about-story__content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-story__visual {
+  min-height: 400px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(183, 122, 71, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-leather),
+      #1b1110 70%
+    );
+
+  border: 1px solid var(--color-border);
+}
+
+.about-story__mark {
+  color: var(--color-gold);
+
+  font-size: 5rem;
+
+  opacity: 0.75;
+}
+
+
+/* =============================================
+   ABOUT — VALUES
+   ============================================= */
+
+.about-values {
+  padding-block: 6rem;
+
+  background-color: var(--color-obsidian-soft);
+
+  border-block: 1px solid var(--color-border);
+}
+
+.about-values__heading {
+  margin-bottom: 3rem;
+
+  text-align: center;
+}
+
+.about-values__heading h2 {
+  margin-bottom: 0;
+}
+
+.about-values__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 2rem;
+}
+
+.about-value {
+  padding: 2rem;
+
+  border-top: 1px solid var(--color-copper);
+}
+
+.about-value h3 {
+  margin-bottom: 0.75rem;
+
+  color: var(--color-parchment);
+
+  font-size: 1rem;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-value p {
+  margin-bottom: 0;
+
+  line-height: 1.7;
+}
+
+
+/* =============================================
+   ABOUT — OUR MARK
+   ============================================= */
+
+.about-mark {
+  padding-block: 6rem;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(74, 42, 99, 0.14),
+      transparent 50%
+    ),
+    var(--color-obsidian);
+}
+
+.about-mark__inner {
+  display: grid;
+
+  grid-template-columns: 0.6fr 1.4fr;
+
+  gap: 4rem;
+
+  align-items: center;
+}
+
+.about-mark__symbol {
+  display: grid;
+  place-items: center;
+
+  min-height: 300px;
+
+  color: var(--color-gold);
+
+  font-size: 4rem;
+
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-obsidian-soft);
+}
+
+.about-mark__content {
+  max-width: 650px;
+}
+
+.about-mark__content p:last-child {
+  margin-bottom: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 
@@ -938,13 +1195,34 @@ p {
 
   .mission-section__values {
   grid-template-columns: 1fr;
-}
+  }
 
-.mission-value {
+  .about-story__grid,
+  .about-mark__inner {
+  grid-template-columns: 1fr;
+  }
+
+  .about-story__content,
+  .about-mark__content {
+  max-width: none;
+  }
+
+  .about-values__grid {
+  grid-template-columns: 1fr;
+  }
+
+  .about-story__visual,
+  .about-mark__symbol {
+  width: min(100%, 600px);
+
+  margin-inline: auto;
+  }
+
+  .mission-value {
   max-width: 600px;
 
   margin-inline: auto;
-}
+  }
 }
 
 @media (max-width: 700px) {
@@ -973,10 +1251,28 @@ p {
 
   gap: 2rem;
   }
+
+  .page-hero {
+  padding-block: 5rem;
+  }
+
+  .about-story,
+  .about-values,
+  .about-mark {
+  padding-block: 4rem;
+  }
+
+  .about-story__visual {
+  min-height: 300px;
+  }
+
+  .about-mark__symbol {
+  min-height: 240px;
+  }
 }
 
 
-/* =============================================
+/* ============================================
    REDUCED MOTION
    ============================================= */
 
