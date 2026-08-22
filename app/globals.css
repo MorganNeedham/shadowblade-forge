@@ -390,138 +390,6 @@ p {
 }
 
 /* =============================================
-   MOBILE NAVIGATION
-   ============================================= */
-
-.site-nav-toggle {
-  display: none;
-
-  width: 44px;
-  height: 44px;
-
-  padding: 0;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  gap: 5px;
-
-  background: transparent;
-
-  border: 1px solid var(--color-border);
-
-  cursor: pointer;
-}
-
-.site-nav-toggle span {
-  width: 20px;
-  height: 1px;
-
-  background-color: var(--color-parchment);
-
-  transition:
-    transform var(--transition-standard),
-    opacity var(--transition-standard);
-}
-
-.site-nav-toggle--open span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.site-nav-toggle--open span:nth-child(2) {
-  opacity: 0;
-}
-
-.site-nav-toggle--open span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-.mobile-nav {
-  display: none;
-
-  background-color: var(--color-obsidian-soft);
-
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-
-  box-shadow: var(--shadow-medium);
-}
-
-.mobile-nav--open {
-  display: block;
-}
-
-.mobile-nav__list,
-.mobile-nav__submenu {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.mobile-nav__list {
-  padding-block: 1rem;
-}
-
-.mobile-nav__list > li {
-  border-bottom: 1px solid rgba(214, 185, 140, 0.12);
-}
-
-.mobile-nav__list > li:last-child {
-  border-bottom: 0;
-}
-
-.mobile-nav__list > li > a,
-.mobile-nav__section-title {
-  display: block;
-
-  padding: 1rem 0;
-
-  color: var(--color-parchment);
-
-  font-family: var(--font-heading), Georgia, serif;
-  font-size: 0.9rem;
-
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.mobile-nav__list a {
-  transition:
-    color var(--transition-standard),
-    padding-left var(--transition-standard);
-}
-
-.mobile-nav__list a:hover,
-.mobile-nav__list a:focus-visible {
-  color: var(--color-copper-light);
-}
-
-.mobile-nav__section-title {
-  color: var(--color-copper);
-}
-
-.mobile-nav__submenu {
-  padding-bottom: 0.75rem;
-}
-
-.mobile-nav__submenu a {
-  display: block;
-
-  padding: 0.55rem 0 0.55rem 1.25rem;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.95rem;
-}
-
-.mobile-nav__submenu a:hover,
-.mobile-nav__submenu a:focus-visible {
-  padding-left: 1.5rem;
-}
-
-/* =============================================
    HOME HERO
    ============================================= */
 
@@ -2377,22 +2245,47 @@ p {
   }
 
   .site-header__inner {
-  min-height: 76px;
+  min-height: auto;
+
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  padding-block: 1rem;
   }
 
-  .site-nav--desktop {
-  display: none;
+  .site-brand {
+  justify-content: center;
   }
 
-  .site-nav-toggle {
-  display: flex;
+  .site-brand__name {
+  font-size: 0.9rem;
+  }
+
+  .site-nav {
+  width: 100%;
+  }
+
+  .site-nav__list {
+  width: 100%;
+
+  justify-content: center;
+
+  gap: 1.25rem;
+  }
+
+  .site-nav a {
+  font-size: 0.72rem;
+
+  letter-spacing: 0.07em;
+
+  padding-block: 0.5rem;
   }
 
   .site-brand__name {
   font-size: 0.9rem;
   }
 }
-
 
 /* ============================================
    REDUCED MOTION
