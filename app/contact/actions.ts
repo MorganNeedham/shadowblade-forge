@@ -1,5 +1,6 @@
 "use server";
 
+import { Resend } from "resend";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -66,8 +67,59 @@ export async function submitContactForm(
     };
   }
 
+  const {
+    name,
+    email,
+    subject,
+    topic,
+    message,
+  } = result.data;
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const contactEmail = process.env.CONTACT_TO_EMAIL;
+
+  if (!apiKey || !contactEmail) {
+    console.error(
+      "Missing RESEND_API_KEY or CONTACT_TO_EMAIL environment variable.",
+    );
+
+    return {
+      success: false,
+      message:
+        "The contact form is temporarily unavailable. Please try again later.",
+    };
+  }
+
+  const resend = new Resend(apiKey);
+
+  const { error } = await resend.emails.send({
+    from: "Shadowblade Forge <onboarding@resend.dev>",
+    to: [contactEmail],
+    replyTo: email,
+    subject: `[Shadowblade Forge] ${subject}`,
+    text: [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Topic: ${topic || "Not selected"}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n"),
+  });
+
+  if (error) {
+    console.error("Resend error:", error);
+
+    return {
+      success: false,
+      message:
+        "Something went wrong while sending your message. Please try again.",
+    };
+  }
+
   return {
     success: true,
-    message: "Your message is ready to send.",
+    message:
+      "Your message has been sent. Thank you for contacting Shadowblade Forge.",
   };
 }
