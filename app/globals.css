@@ -1815,6 +1815,226 @@ p {
 }
 
 /* =============================================
+   FORGE JOURNAL
+   ============================================= */
+
+.journal-section {
+  padding-block: 6rem;
+
+  background-color: var(--color-obsidian);
+}
+
+.journal-section__heading,
+.journal-categories__heading {
+  margin-bottom: 3rem;
+
+  text-align: center;
+}
+
+.journal-section__eyebrow {
+  margin-bottom: 0.5rem;
+
+  color: var(--color-copper);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.75rem;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.journal-section__heading h2,
+.journal-categories__heading h2 {
+  margin-bottom: 0;
+
+  color: var(--color-parchment);
+
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+}
+
+
+/* =============================================
+   JOURNAL EMPTY STATE
+   ============================================= */
+
+.journal-empty {
+  max-width: 760px;
+
+  margin-inline: auto;
+  padding: 4rem 3rem;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(110, 73, 53, 0.14),
+      rgba(74, 42, 99, 0.12)
+    ),
+    var(--color-obsidian-soft);
+
+  border: 1px solid var(--color-border);
+}
+
+.journal-empty__mark {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: var(--color-copper);
+
+  font-size: 0.8rem;
+}
+
+.journal-empty__eyebrow {
+  margin-bottom: 0.6rem;
+
+  color: var(--color-copper);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.72rem;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.journal-empty h3 {
+  margin-bottom: 1rem;
+
+  color: var(--color-parchment);
+
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+
+  line-height: 1.3;
+}
+
+.journal-empty > p:last-of-type {
+  max-width: 600px;
+
+  margin-inline: auto;
+  margin-bottom: 1.75rem;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =============================================
+   JOURNAL POSTS
+   ============================================= */
+
+.journal-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1.5rem;
+}
+
+.journal-post {
+  padding: 2rem;
+
+  background-color: var(--color-obsidian-soft);
+
+  border: 1px solid var(--color-border);
+}
+
+.journal-post__category {
+  margin-bottom: 0.6rem;
+
+  color: var(--color-copper);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.7rem;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.journal-post h3 {
+  margin-bottom: 0.75rem;
+
+  color: var(--color-parchment);
+
+  font-size: 1.15rem;
+}
+
+.journal-post p {
+  line-height: 1.7;
+}
+
+.journal-post__link {
+  color: var(--color-gold);
+
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 0.75rem;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid var(--color-copper);
+}
+
+
+/* =============================================
+   JOURNAL CATEGORIES
+   ============================================= */
+
+.journal-categories {
+  padding-block: 6rem;
+
+  background-color: var(--color-obsidian-soft);
+
+  border-block: 1px solid var(--color-border);
+}
+
+.journal-categories__grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 1.5rem;
+}
+
+.journal-category {
+  padding: 2rem;
+
+  text-align: center;
+
+  border-top: 1px solid var(--color-copper);
+}
+
+.journal-category__mark {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: var(--color-copper);
+
+  font-size: 0.55rem;
+}
+
+.journal-category h3 {
+  margin-bottom: 0.75rem;
+
+  color: var(--color-parchment);
+
+  font-size: 0.95rem;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.journal-category p {
+  margin-bottom: 0;
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 
@@ -1907,6 +2127,15 @@ p {
   .collection-status__content {
   max-width: 700px;
   }
+
+  .journal-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .journal-categories__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
 }
 
 @media (max-width: 700px) {
@@ -2000,6 +2229,20 @@ p {
   .collection-status__actions {
   align-items: flex-start;
   flex-direction: column;
+  }
+
+  .journal-section,
+  .journal-categories {
+  padding-block: 4rem;
+  }
+
+  .journal-grid,
+  .journal-categories__grid {
+  grid-template-columns: 1fr;
+  }
+
+  .journal-empty {
+  padding: 3rem 1.5rem;
   }
 }
 
