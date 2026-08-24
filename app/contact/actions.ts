@@ -93,7 +93,7 @@ export async function submitContactForm(
   const resend = new Resend(apiKey);
 
   const { error } = await resend.emails.send({
-    from: "Shadowblade Forge <onboarding@resend.dev>",
+    from: "Shadowblade Forge <contact@shadowbladeforge.com>",
     to: [contactEmail],
     replyTo: email,
     subject: `[Shadowblade Forge] ${subject}`,
