@@ -231,6 +231,14 @@ p {
   font-size: 1.7rem;
 }
 
+.site-brand__logo {
+  width: 64px;
+  height: 64px;
+
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .site-brand__name {
   display: flex;
   flex-direction: column;
@@ -1139,21 +1147,6 @@ p {
   align-items: center;
 }
 
-.about-mark__symbol {
-  display: grid;
-  place-items: center;
-
-  min-height: 300px;
-
-  color: var(--color-gold);
-
-  font-size: 4rem;
-
-  border: 1px solid var(--color-border);
-
-  background-color: var(--color-obsidian-soft);
-}
-
 .about-mark__content {
   max-width: 650px;
 }
@@ -1163,6 +1156,18 @@ p {
 
   font-size: 1.05rem;
   line-height: 1.8;
+}
+
+.about-mark__logo {
+  display: block;
+
+  width: 180px;
+  height: auto;
+
+  margin-inline: auto;
+  margin-bottom: 2rem;
+
+  object-fit: contain;
 }
 
 /* =============================================
@@ -2138,9 +2143,11 @@ p {
 }
 
 @media (max-width: 700px) {
-  .container {
-    width: min(100% - 2rem, var(--container-width));
+  .site-brand__logo {
+    width: 42px;
+    height: 42px;
   }
+
 
   .home-hero {
     min-height: 560px;

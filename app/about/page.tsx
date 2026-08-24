@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import PageHero from "@/components/ui/PageHero";
 
@@ -68,9 +69,13 @@ export default function AboutPage() {
             className="about-story__visual"
             aria-hidden="true"
           >
-            <span className="about-story__mark">
-              ◆
-            </span>
+            <Image
+              src="/images/logo/shadowblade-forge-mark-light.png"
+              alt="Shadowblade Forge maker's mark"
+              width={300}
+              height={300}
+              className="about-mark__logo"
+            />
           </div>
         </div>
       </section>

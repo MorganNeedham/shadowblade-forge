@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SiteHeader() {
   return (
@@ -13,7 +14,13 @@ export default function SiteHeader() {
             className="site-brand__mark"
             aria-hidden="true"
           >
-            ◆
+            <Image
+              src="/images/logo/shadowblade-forge-mark-light.png"
+              alt=""
+              width={64}
+              height={64}
+              className="site-brand__logo"
+            />
           </span>
 
           <span className="site-brand__name">
